@@ -1,0 +1,121 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background: linear-gradient(to right, #1c2b40 50%, #e8a1b0 50%); /* Left half dark blue, right half pink/purple */
+  overflow-x: hidden;
+  color: #4d4740;
+  min-height: 100vh; /* Ensure content can grow beyond the initial view */
+}
+
+/* Header for TV Girl style */
+.header {
+  text-align: center;
+  padding: 50px;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+/* Adding grain effect overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('grain.png'); /* Grain texture for lo-fi feel */
+  opacity: 0.3;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Container for the images */
+.image-container {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  padding: 50px 0;
+  z-index: 2;
+}
+
+/* Styling for each image wrapper */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  z-index: 2;
+}
+
+.image-wrapper img {
+  width: 250px; /* Popup size */
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Left and right animations */
+.from-left {
+  transform: translateX(-150%);
+}
+
+.from-right {
+  transform: translateX(150%);
+}
+
+/* When visible, the image pops in */
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fading out to the left and right */
+.fade-out-left {
+  transform: translateX(-150%);
+  opacity: 0;
+}
+
+.fade-out-right {
+  transform: translateX(150%);
+  opacity: 0;
+}
+
+/* TV Girl blue and pink tones for header */
+.header h1 {
+  font-family: 'Georgia', serif;
+  color: #4369bc; /* Light blue tone */
+}
+
+.header p {
+  font-family: 'Courier', monospace;
+  color: #EB4D4D; /* Pink tone */
+}
+
+/* Responsiveness for smaller screens like iPhones */
+@media (max-width: 1080px) {
+  .image-wrapper img {
+    width: 180px; /* Smaller size for mobile screens */
+  }
+}
+
+/* Half background colors split vertically */
+body {
+  background: linear-gradient(to right, #1c2b40 50%, #fc818d 50%); /* Dark blue left, pink/purple right */
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
