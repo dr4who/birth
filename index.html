@@ -9,7 +9,7 @@
 </head>
 <body>
   <!-- Autoplaying audio -->
-  <audio id="audio" autoplay loop>
+  <audio id="bg-audio" autoplay loop>
     <source src="audio.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
@@ -317,41 +317,6 @@
 	</div>
     <!-- Add as many images as necessary following the same pattern -->
   </div>
-	<script>
-    // Variable to track whether the audio has been played
-    let audioPlayed = false;
-
-    // Get the audio element
-    const audio = document.getElementById('audio');
-
-    // Event listener for scroll
-    window.addEventListener('scroll', function() {
-      // Only play the audio the first time scrolling occurs
-      if (!audioPlayed) {
-        audio.play();
-        audioPlayed = true;
-      }
-
-      const imageWrappers = document.querySelectorAll('.image-wrapper');
-      imageWrappers.forEach(wrapper => {
-        const rect = wrapper.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        // Check if the image is within the viewport
-        if (rect.top < windowHeight && rect.bottom > 0) {
-          wrapper.classList.add('visible');
-        } else {
-          const side = wrapper.getAttribute('data-side');
-          wrapper.classList.remove('visible');
-          if (side === 'left') {
-            wrapper.classList.add('fade-out-left');
-          } else {
-            wrapper.classList.add('fade-out-right');
-          }
-        }
-      });
-    });
-  </script>
   <h2 style="color: black; direction:rtl">شكرا لوجودك في حياتي يا اغلى واحلى بنت في الدنيا كلها,
   <br>
    انتي اكتر شخص تعبته معايا وطلعت عينه بعد ما الكل اتخلى عني , اول شخص اعتبره بنتي ,
